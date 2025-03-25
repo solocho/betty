@@ -1,49 +1,67 @@
 /* GENERAL STYLES */
 body {
-    font-family: Arial, sans-serif;
     background-color: #FFF8E1;
+    font-family: Arial, sans-serif;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 /* HEADER */
 .header {
+    height: 100px;
+    margin: 10px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: white;
-    padding: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* LOGO SECTION */
 .right {
     display: flex;
     align-items: center;
 }
 
 .logo {
-    height: 60px;
-    border-radius: 50%;
+    height: 70px;
+    border-radius: 35px;
 }
 
 .logo-n {
     margin-left: 15px;
-    font-family: Rochester, cursive;
-    font-size: 20px;
+    font-family: Rochester;
+    font-size: 18px;
     font-weight: bold;
+    text-transform: uppercase;
     background: linear-gradient(to right, #d4af37, #c0c0c0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3);
+    letter-spacing: 3px;
 }
 
+/* SEARCH & CATEGORY SECTION */
 .middle {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
+/* SEARCH INPUT */
 .search {
-    width: 250px;
+    width: 300px;
     height: 35px;
     padding: 5px 10px;
     border: 2px solid #ccc;
@@ -56,7 +74,11 @@ body {
     outline: none;
 }
 
+/* SEARCH ICON */
 .search-icon-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: grey;
     border-radius: 5px;
     padding: 5px;
@@ -68,44 +90,164 @@ body {
     width: 20px;
 }
 
+/* CATEGORY & CURRENCY DROPDOWNS */
+.dropdown, .currency-dropdown {
+    position: relative;
+    width: 150px;
+}
+
+/* STYLE INPUT FIELDS */
+.category, .currency {
+    width: 100%;
+    height: 35px;
+    padding: 5px 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+    font-weight: bold;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* HOVER & ACTIVE STATE */
+.category:hover, .currency:hover {
+    border-color: #d4af37;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu, .currency-menu {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style: none;
+    padding: 5px 0;
+    margin-top: 5px;
+    display: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* MENU ITEMS */
+.dropdown-menu li, .currency-menu li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* HOVER EFFECT */
+.dropdown-menu li:hover, .currency-menu li:hover {
+    background: #d4af37;
+    color: white;
+}
+
+/* SHOW DROPDOWN ON HOVER */
+.dropdown:hover .dropdown-menu,
+.currency-dropdown:hover .currency-menu {
+    display: block;
+}
+
+/* LEFT SECTION (USER, CART, LIKE) */
 .left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
+/* USER HELLO TEXT */
 .hello {
     font-size: 14px;
     font-weight: bold;
 }
 
-/* SLIDER */
+/* USERNAME STYLE */
+.username {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+/* CART & LIKE ICONS */
+.li-ca {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.like, .cart {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* ADJUST CURRENCY INPUT */
+.currency {
+    width: 80px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .middle {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* CONTAINER STYLES */
+
+/* SLIDER CONTAINER */
+/* SLIDER CONTAINER */
 .slider-container {
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
+    height: 500px;
     overflow: hidden;
 }
 
+/* SLIDES */
 .slides {
     display: flex;
     transition: transform 0.8s ease-in-out;
 }
 
+/* INDIVIDUAL SLIDE */
 .slide {
     position: relative;
     min-width: 100%;
+    height: 500px;
+    padding:15px 15px;
     border-radius: 10px;
 }
 
 .slide img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 0px;;
+}
+
+/* TEXT ON SLIDE */
 .text {
     position: absolute;
     top: 50%;
@@ -113,20 +255,73 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    border-radius: 10px;
 }
 
 .text h2 {
-    font-size: 28px;
+    font-size: 50px;
     margin-bottom: 10px;
 }
 
-.motto {
-    font-size: 16px;
+.text h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
     font-weight: bold;
+    color: #ff4081; /* Vibrant pink, change as needed */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #ff4081, #ff7300); /* Gradient effect */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 1.5s infinite alternate;
 }
+
+/* Glowing Effect */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 64, 129, 0.8), 0 0 20px rgba(255, 115, 0, 0.6);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 64, 129, 1), 0 0 30px rgba(255, 115, 0, 1);
+    }
+}
+
+/* Underline Hover Effect */
+.text h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 4px;
+    background: #ff7300;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+.text h2:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Subtle Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text h2 {
+    animation: fadeIn 1s ease-in-out;
+}
+
 
 .shop-btn {
     background: black;
@@ -165,7 +360,7 @@ body {
 /* DOTS */
 .dots-container {
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -183,32 +378,82 @@ body {
 .dot.active {
     background: #ff4081;
 }
+ .motto{font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #ff4081; /* Vibrant pink */
+    background: linear-gradient(90deg, #ff4081, #ff7300);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px 20px;
+    position: relative;
+    
+    animation: fadeIn 1s ease-in-out, glow 1.5s infinite alternate;
+    display: block; /* Ensures it takes full width */
+    text-align: center; /* Keeps it centered */
+    margin-bottom: 20px; /* Adds space below */
+}
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
+/* Glowing Effect */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(255, 64, 129, 0.7), 0 0 10px rgba(255, 115, 0, 0.5);
     }
+    to {
+        text-shadow: 0 0 10px rgba(255, 64, 129, 1), 0 0 20px rgba(255, 115, 0, 1);
+    }
+}
 
-    .middle {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+/* Underline Effect */
+.motto::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 4px;
+    background: #ff7300;
+    transition: width 0.4s ease, left 0.4s ease;
+}
 
-    .search {
-        width: 90%;
-    }
+.motto:hover::after {
+    width: 100%;
+    left: 0;
+}
 
-    .text {
-        width: 80%;
-        padding: 10px;
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.menu-cons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin-right: 300px;
+    margin-left: 300px;
+    height: 100px;
+}
+.menu-cons img{
+    height: 50px;
+}
+.support{
+    
+}
+.ship{
+    
 
-    .shop-btn {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
+}
+.transaction{
+    
+
 }
