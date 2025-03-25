@@ -1,12 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Dropdown menu click event
-    document.querySelectorAll(".dropdown-menu li").forEach(item => {
-        item.addEventListener("click", function () {
-            document.querySelector(".category").value = this.textContent;
-        });
-    });
+    // Dropdown Menu Logic
+    const dropdown = document.querySelector(".category");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
 
-    // Smooth fade-in effect for `.con-1`
+    if (dropdown && dropdownMenu) {
+        dropdown.addEventListener("click", () => {
+            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+
+        document.querySelectorAll(".dropdown-menu li").forEach(item => {
+            item.addEventListener("click", function () {
+                dropdown.value = this.textContent;
+                dropdownMenu.style.display = "none";
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!dropdown.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = "none";
+            }
+        });
+    }
+
+    // Smooth Fade-in Effect for `.con-1`
     const con1 = document.querySelector('.con-1');
     if (con1) {
         setTimeout(() => {
@@ -14,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
     }
 
-    // Slider functionality
+    // Slider Functionality
     let currentIndex = 0;
     const slides = document.querySelector(".slides");
     const dots = document.querySelectorAll(".dot");
@@ -62,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         autoSlideInterval = setInterval(nextSlide, 10000);
     }
 
-    // Attach click events to buttons only if they exist
+    // Attach Click Events to Buttons Only if They Exist
     const nextBtn = document.querySelector(".next");
     const prevBtn = document.querySelector(".prev");
 
@@ -71,6 +87,11 @@ document.addEventListener("DOMContentLoaded", function () {
         prevBtn.addEventListener("click", prevSlide);
     }
 
-    // Start the auto-slide
+    // Attach Click Events to Dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => goToSlide(index));
+    });
+
+    // Start Auto-Sliding
     startAutoSlide();
 });
