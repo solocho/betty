@@ -1,62 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Betty Siddy Collections</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Simulating a logged-in user
+        const userName = "John Doe"; // Replace with actual logged-in user data
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("user-name").textContent = userName;
+        });
+    </script>
 </head>
 <body>
+    <div class="bighead">
+        <div class="header">
+            <div class="right">
+                <div>
+                    <img class="logo" src="logo.png" alt="Logo">
+                </div>
+                <div>
+                    <p class="logo-n">Betty Siddy Collection</p>
+                </div>
+            </div>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="right">
-            <img class="logo" src="logo.png" alt="Logo">
-            <p class="logo-n">Betty Siddy Collection</p>
-        </div>
+            <div class="middle">
+                <input class="search" type="text" placeholder="Search">
+                <div class="search-icon-con">
+                    <img class="search-icon" src="search.svg" alt="Search">
+                </div>
 
-        <div class="middle">
-            <input class="search" type="text" placeholder="Search">
-            <div class="search-icon-con">
-                <img class="search-icon" src="search.svg" alt="Search">
+                <!-- Category Dropdown -->
+                <div class="dropdown">
+                    <input class="category" type="text" placeholder="Category">
+                    <ul class="dropdown-menu">
+                        <li>Bags</li>
+                        <li>Jumpers</li>
+                        <li>T-Shirts</li>
+                        <li>Dresses</li>
+                        <li>Jackets</li>
+                        <li>Sneakers</li>
+                        <li>Hats</li>
+                        <li>Jeans</li>
+                        <li>Shorts</li>
+                        <li>Watches</li>
+                        <li>Gloves</li>
+                        <li>Sunglasses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="left">
+                <div class="hello">
+                    <p>Hello, <span id="user-name">Guest</span> |</p>
+                </div>
+
+                <div class="li-ca">
+                    <div class="like-con">
+                        <img class="like" src="like.svg" alt="Like">
+                    </div>
+                    <div class="cart-con">
+                        <img class="cart" src="cart.svg" alt="Cart">
+                    </div>
+                </div>
+
+                <!-- Currency Dropdown -->
+                <div class="currency-dropdown">
+                    <input class="currency" type="text" placeholder="KSH">
+                    <ul class="currency-menu">
+                        <li>USD - US Dollar</li>
+                        <li>EUR - Euro</li>
+                        <li>GBP - British Pound</li>
+                        <li>JPY - Japanese Yen</li>
+                        <li>AUD - Australian Dollar</li>
+                        <li>CAD - Canadian Dollar</li>
+                        <li>CHF - Swiss Franc</li>
+                        <li>CNY - Chinese Yuan</li>
+                        <li>INR - Indian Rupee</li>
+                        <li>ZAR - South African Rand</li>
+                        <li>NGN - Nigerian Naira</li>
+                        <li>KES - Kenyan Shilling</li>
+                    </ul>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="left">
-            <p class="hello">Hello, <span id="user-name">Guest</span> |</p>
-            <div class="icons">
-                <img class="like" src="like.svg" alt="Like">
-                <img class="cart" src="cart.svg" alt="Cart">
-            </div>
-        </div>
-    </header>
-
-    <!-- IMAGE SLIDER -->
     <div class="slider-container">
         <div class="slides">
             <div class="slide">
-                <img src="selling/bags.png" alt="Bags">
+                <img src="selling/bag.png">
+                <div class="overlay"></div>
                 <div class="text">
                     <h2>New Bags Collection</h2>
                     <p class="motto">Luxury Handbags - Largest Range Available</p>
                     <button class="shop-btn">Shop Now</button>
                 </div>
             </div>
-
+    
             <div class="slide">
-                <img src="selling/hoodie.png" alt="Hoodies">
+                <img src="selling/hoodie.png">
+                <div class="overlay"></div>
                 <div class="text">
                     <h2>New Hoodies Collection</h2>
                     <p class="motto">Stylish and Comfortable Hoodies</p>
                     <button class="shop-btn">Shop Now</button>
                 </div>
             </div>
-
+    
             <div class="slide">
-                <img src="selling/sneaker.png" alt="Sneakers">
+                <img src="selling/sneaker.png">
+                <div class="overlay"></div>
                 <div class="text">
                     <h2>New Sneaker Collection</h2>
                     <p class="motto">Step Up Your Style - Limited Edition</p>
@@ -64,11 +122,11 @@
                 </div>
             </div>
         </div>
-
+    
         <!-- Navigation Arrows -->
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
-
+    
         <!-- Dots for Manual Navigation -->
         <div class="dots-container">
             <span class="dot" onclick="goToSlide(0)"></span>
@@ -77,6 +135,27 @@
         </div>
     </div>
 
+    <div class="menu-cons">
+        <div class="ship">
+            <div><img src="menu-con/shipping.png"></div>
+            <div><p>Track Order</p></div>
+            <div><p>24/7 Delivery</p></div>
+        </div>
+        <div class="transaction">
+            <div><img src="menu-con/transaction.png"></div>
+            <div><p>Transactions</p></div>
+            <div></div>
+        </div>
+        <div class="support">
+            <div><img src="menu-con/call.png"></div>
+            <div>24 HRS support </div>
+            <div>contact our support team</div>
+        </div>
+    </div>
+    
+    
+    
     <script src="index.js"></script>
+
 </body>
 </html>
