@@ -1,114 +1,214 @@
-/* General Reset */
-* {
+/* GENERAL STYLES */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF8E1;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
-/* Dropdown Styling */
-.dropdown {
-    position: relative;
-    width: 200px;
-    margin: 20px auto;
-}
-
-.category {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-
-.dropdown-menu {
-    position: absolute;
-    list-style: none;
-    width: 100%;
-    border: 1px solid #ccc;
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: white;
-    display: none;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-menu li {
-    padding: 10px;
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    border-radius: 50%;
+}
+
+.logo-n {
+    margin-left: 15px;
+    font-family: Rochester, cursive;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right, #d4af37, #c0c0c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.middle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search {
+    width: 250px;
+    height: 35px;
+    padding: 5px 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.search:focus {
+    border-color: #d4af37;
+    outline: none;
+}
+
+.search-icon-con {
+    background: grey;
+    border-radius: 5px;
+    padding: 5px;
     cursor: pointer;
 }
 
-.dropdown-menu li:hover {
-    background: #f0f0f0;
+.search-icon {
+    height: 20px;
+    width: 20px;
 }
 
-/* Fade-in Effect */
-.con-1 {
-    text-align: center;
-    font-size: 24px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.con-1.show {
-    opacity: 1;
+.hello {
+    font-size: 14px;
+    font-weight: bold;
 }
 
-/* Slider Styles */
+/* SLIDER */
 .slider-container {
     position: relative;
-    width: 80%;
-    max-width: 500px;
-    margin: 30px auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
     overflow: hidden;
-    border: 2px solid #ddd;
 }
 
 .slides {
     display: flex;
-    width: 300%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.8s ease-in-out;
 }
 
 .slide {
-    width: 100%;
-    text-align: center;
-    padding: 50px;
-    background: #ddd;
+    position: relative;
+    min-width: 100%;
+    border-radius: 10px;
 }
 
-/* Navigation Buttons */
-button {
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.motto {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.shop-btn {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.shop-btn:hover {
+    background: #e7356a;
+}
+
+/* NAVIGATION BUTTONS */
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
     padding: 10px;
+    font-size: 24px;
     cursor: pointer;
+    z-index: 10;
 }
 
-.prev {
-    left: 10px;
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
-.next {
-    right: 10px;
-}
-
-/* Dots Navigation */
-.dots {
-    text-align: center;
-    margin-top: 10px;
+/* DOTS */
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
 }
 
 .dot {
-    height: 10px;
-    width: 10px;
-    margin: 5px;
-    background: gray;
-    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #ccc;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .dot.active {
-    background: black;
+    background: #ff4081;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .middle {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .search {
+        width: 90%;
+    }
+
+    .text {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .shop-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
 }
