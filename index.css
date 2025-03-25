@@ -1,118 +1,114 @@
-/* Responsive Styles */
-@media (max-width: 768px) {
-    /* HEADER */
-    .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 15px;
-    }
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    .right, .middle, .left {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    width: 200px;
+    margin: 20px auto;
+}
 
-    .logo {
-        height: 50px;
-        border-radius: 25px;
-    }
+.category {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
 
-    .logo-n {
-        font-size: 14px;
-        letter-spacing: 2px;
-    }
+.dropdown-menu {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: white;
+    display: none;
+}
 
-    /* SEARCH & CATEGORY */
-    .middle {
-        width: 100%;
-    }
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+}
 
-    .search {
-        width: 90%;
-    }
+.dropdown-menu li:hover {
+    background: #f0f0f0;
+}
 
-    .category {
-        width: 90%;
-    }
+/* Fade-in Effect */
+.con-1 {
+    text-align: center;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
 
-    /* LIKE & CART ICONS */
-    .li-ca {
-        gap: 10px;
-    }
+.con-1.show {
+    opacity: 1;
+}
 
-    .like, .cart {
-        width: 20px;
-        height: 20px;
-    }
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    margin: 30px auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
 
-    /* SLIDER */
-    .slider-container {
-        height: 350px;
-    }
+.slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
 
-    .slide {
-        height: 350px;
-        margin: 0;
-    }
+.slide {
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+    background: #ddd;
+}
 
-    .slide img {
-        border-radius: 0;
-    }
+/* Navigation Buttons */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
 
-    .text {
-        width: 90%;
-        padding: 10px;
-    }
+.prev {
+    left: 10px;
+}
 
-    .text h2 {
-        font-size: 24px;
-    }
+.next {
+    right: 10px;
+}
 
-    .motto {
-        font-size: 12px;
-        margin-bottom: 10px;
-    }
+/* Dots Navigation */
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
 
-    .shop-btn {
-        padding: 8px 15px;
-        font-size: 12px;
-    }
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 5px;
+    background: gray;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
-    /* NAVIGATION BUTTONS */
-    .prev, .next {
-        padding: 5px;
-        font-size: 18px;
-    }
-
-    /* DOTS */
-    .dots-container {
-        bottom: 10px;
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
-    }
-
-    /* DROPDOWN MENUS */
-    .dropdown, .currency-dropdown {
-        width: 90%;
-    }
-
-    .dropdown-menu, .currency-menu {
-        width: 100%;
-        font-size: 12px;
-    }
-
-    /* Reduce paddings/margins */
-    .hello p {
-        font-size: 12px;
-    }
-
-    /* Ensure border-radius is consistent */
-    .header, .search, .category, .currency, .shop-btn {
-        border-radius: 8px;
-    }
+.dot.active {
+    background: black;
 }
