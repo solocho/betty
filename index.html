@@ -1,143 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Betty Siddy Collections</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        // Simulating a logged-in user
-        const userName = "John Doe"; // Replace with actual logged-in user data
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("user-name").textContent = userName;
-        });
-    </script>
+    <title>Slider & Dropdown</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="bighead">
-        <div class="header">
-            <div class="right">
-                <div>
-                    <img class="logo" src="logo.png" alt="Logo">
-                </div>
-                <div>
-                    <p class="logo-n">Betty Siddy Collection</p>
-                </div>
-            </div>
 
-            <div class="middle">
-                <input class="search" type="text" placeholder="Search">
-                <div class="search-icon-con">
-                    <img class="search-icon" src="search.svg" alt="Search">
-                </div>
-
-                <!-- Category Dropdown -->
-                <div class="dropdown">
-                    <input class="category" type="text" placeholder="Category">
-                    <ul class="dropdown-menu">
-                        <li>Bags</li>
-                        <li>Jumpers</li>
-                        <li>T-Shirts</li>
-                        <li>Dresses</li>
-                        <li>Jackets</li>
-                        <li>Sneakers</li>
-                        <li>Hats</li>
-                        <li>Jeans</li>
-                        <li>Shorts</li>
-                        <li>Watches</li>
-                        <li>Gloves</li>
-                        <li>Sunglasses</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="left">
-                <div class="hello">
-                    <p>Hello, <span id="user-name">Guest</span> |</p>
-                </div>
-
-                <div class="li-ca">
-                    <div class="like-con">
-                        <img class="like" src="like.svg" alt="Like">
-                    </div>
-                    <div class="cart-con">
-                        <img class="cart" src="cart.svg" alt="Cart">
-                    </div>
-                </div>
-
-                <!-- Currency Dropdown -->
-                <div class="currency-dropdown">
-                    <input class="currency" type="text" placeholder="KSH">
-                    <ul class="currency-menu">
-                        <li>USD - US Dollar</li>
-                        <li>EUR - Euro</li>
-                        <li>GBP - British Pound</li>
-                        <li>JPY - Japanese Yen</li>
-                        <li>AUD - Australian Dollar</li>
-                        <li>CAD - Canadian Dollar</li>
-                        <li>CHF - Swiss Franc</li>
-                        <li>CNY - Chinese Yuan</li>
-                        <li>INR - Indian Rupee</li>
-                        <li>ZAR - South African Rand</li>
-                        <li>NGN - Nigerian Naira</li>
-                        <li>KES - Kenyan Shilling</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+        <input type="text" class="category" placeholder="Select a category" readonly>
+        <ul class="dropdown-menu">
+            <li>Category 1</li>
+            <li>Category 2</li>
+            <li>Category 3</li>
+        </ul>
     </div>
 
+    <!-- Smooth fade-in container -->
+    <div class="con-1">Welcome! This fades in smoothly.</div>
+
+    <!-- Image Slider -->
     <div class="slider-container">
         <div class="slides">
-            <div class="slide">
-                <img src="selling/bags.png">
-                <div class="overlay"></div>
-                <div class="text">
-                    <h2>New Bags Collection</h2>
-                    <p class="motto">Luxury Handbags - Largest Range Available</p>
-                    <button class="shop-btn">Shop Now</button>
-                </div>
-            </div>
-    
-            <div class="slide">
-                <img src="selling/hoodie.png">
-                <div class="overlay"></div>
-                <div class="text">
-                    <h2>New Hoodies Collection</h2>
-                    <p class="motto">Stylish and Comfortable Hoodies</p>
-                    <button class="shop-btn">Shop Now</button>
-                </div>
-            </div>
-    
-            <div class="slide">
-                <img src="selling/sneaker.png">
-                <div class="overlay"></div>
-                <div class="text">
-                    <h2>New Sneaker Collection</h2>
-                    <p class="motto">Step Up Your Style - Limited Edition</p>
-                    <button class="shop-btn">Shop Now</button>
-                </div>
-            </div>
+            <div class="slide">Slide 1</div>
+            <div class="slide">Slide 2</div>
+            <div class="slide">Slide 3</div>
         </div>
-    
-        <!-- Navigation Arrows -->
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-    
-        <!-- Dots for Manual Navigation -->
-        <div class="dots-container">
-            <span class="dot" onclick="goToSlide(0)"></span>
-            <span class="dot" onclick="goToSlide(1)"></span>
-            <span class="dot" onclick="goToSlide(2)"></span>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
     </div>
-    
-    
-    
-    <script src="index.js"></script>
 
+    <script src="script.js"></script>
 </body>
 </html>
