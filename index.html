@@ -3,37 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider & Dropdown</title>
+    <title>Betty Siddy Collections</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Dropdown Menu -->
-    <div class="dropdown">
-        <input type="text" class="category" placeholder="Select a category" readonly>
-        <ul class="dropdown-menu">
-            <li>Category 1</li>
-            <li>Category 2</li>
-            <li>Category 3</li>
-        </ul>
-    </div>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="right">
+            <img class="logo" src="logo.png" alt="Logo">
+            <p class="logo-n">Betty Siddy Collection</p>
+        </div>
 
-    <!-- Smooth fade-in container -->
-    <div class="con-1">Welcome! This fades in smoothly.</div>
+        <div class="middle">
+            <input class="search" type="text" placeholder="Search">
+            <div class="search-icon-con">
+                <img class="search-icon" src="search.svg" alt="Search">
+            </div>
+        </div>
 
-    <!-- Image Slider -->
+        <div class="left">
+            <p class="hello">Hello, <span id="user-name">Guest</span> |</p>
+            <div class="icons">
+                <img class="like" src="like.svg" alt="Like">
+                <img class="cart" src="cart.svg" alt="Cart">
+            </div>
+        </div>
+    </header>
+
+    <!-- IMAGE SLIDER -->
     <div class="slider-container">
         <div class="slides">
-            <div class="slide">Slide 1</div>
-            <div class="slide">Slide 2</div>
-            <div class="slide">Slide 3</div>
+            <div class="slide">
+                <img src="selling/bags.png" alt="Bags">
+                <div class="text">
+                    <h2>New Bags Collection</h2>
+                    <p class="motto">Luxury Handbags - Largest Range Available</p>
+                    <button class="shop-btn">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="selling/hoodie.png" alt="Hoodies">
+                <div class="text">
+                    <h2>New Hoodies Collection</h2>
+                    <p class="motto">Stylish and Comfortable Hoodies</p>
+                    <button class="shop-btn">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="selling/sneaker.png" alt="Sneakers">
+                <div class="text">
+                    <h2>New Sneaker Collection</h2>
+                    <p class="motto">Step Up Your Style - Limited Edition</p>
+                    <button class="shop-btn">Shop Now</button>
+                </div>
+            </div>
         </div>
-        <button class="prev">❮</button>
-        <button class="next">❯</button>
-        <div class="dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+
+        <!-- Navigation Arrows -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+
+        <!-- Dots for Manual Navigation -->
+        <div class="dots-container">
+            <span class="dot" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
         </div>
     </div>
 
