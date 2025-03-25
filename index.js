@@ -18,15 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
     const slides = document.querySelector(".slides");
     const dots = document.querySelectorAll(".dot");
-    const nextBtn = document.querySelector(".next");
-    const prevBtn = document.querySelector(".prev");
     let autoSlideInterval;
     const pauseAfterLoop = 60000; // 1 min pause after looping
-
-    if (!slides || !dots.length || !nextBtn || !prevBtn) {
-        console.error("Slider elements not found!");
-        return; // Stop execution if elements are missing
-    }
 
     function goToSlide(index) {
         currentIndex = index;
@@ -69,15 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
         autoSlideInterval = setInterval(nextSlide, 10000);
     }
 
-    // Attach event listeners to navigation buttons
-    nextBtn.addEventListener("click", nextSlide);
-    prevBtn.addEventListener("click", prevSlide);
+    // Attach click events to buttons only if they exist
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
 
-    // Attach event listeners to dots for manual selection
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => goToSlide(index));
-    });
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener("click", nextSlide);
+        prevBtn.addEventListener("click", prevSlide);
+    }
 
-    // Start the auto-slide initially
+    // Start the auto-slide
     startAutoSlide();
 });
